@@ -1,0 +1,26 @@
+h1 Users
+
+table class="table"
+  thead
+    tr
+      th Name
+      th Email
+      th Created At
+      th Updated At
+      th
+      th
+      th
+
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.first_name + ' ' + user.last_name
+        td = user.email
+        td = user.created_at.strftime("%m/%d/%Y")
+        td = user.updated_at.strftime("%m/%d/%Y")
+        td = link_to 'Edit', edit_user_path(user)
+        /td = link_to 'Destroy', user, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New User', new_user_path

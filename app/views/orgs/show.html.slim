@@ -1,0 +1,10 @@
+p#notice = notice
+
+h1 =@org.name
+p
+  strong Name:
+  = @org.name
+
+= link_to 'Edit', edit_org_path(@org)
+'|
+= link_to 'Back', orgs_path
