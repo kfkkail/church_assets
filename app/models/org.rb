@@ -1,3 +1,6 @@
+class Org < ApplicationRecord
+end
+
 # == Schema Information
 #
 # Table name: orgs
@@ -7,6 +10,3 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
-class Org < ApplicationRecord
-end

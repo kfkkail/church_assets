@@ -1,17 +1,17 @@
+class Task < ApplicationRecord
+  has_one :org
+  has_and_belongs_to_many :articles
+end
+
 # == Schema Information
 #
 # Table name: tasks
 #
 #  id          :integer          not null, primary key
-#  name        :string
 #  description :text
-#  org_id      :integer
+#  name        :string
+#  start_date  :datetime
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  start_date  :datetime
+#  org_id      :integer
 #
-
-class Task < ApplicationRecord
-  has_one :org
-  has_and_belongs_to_many :articles
-end
