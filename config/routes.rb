@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get '/home', to: 'application#home', as: 'home'
   get '/about', to: 'application#about', as: 'about'
   get '/contact', to: 'application#contact', as: 'contact'
+  get '/unauthorized', to: 'application#unauthorized', as: 'unauthorized'
 end

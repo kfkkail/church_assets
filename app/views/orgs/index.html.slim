@@ -6,7 +6,6 @@ table class="table"
       th Name
       th
       th
-      th
 
   tbody
     - @orgs.each do |org|
@@ -14,8 +13,5 @@ table class="table"
         td = org.name
         td = link_to 'Show', org
         td = link_to 'Edit', edit_org_path(org)
-        td = link_to 'Destroy', org, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
-
-= link_to 'New Org', new_org_path

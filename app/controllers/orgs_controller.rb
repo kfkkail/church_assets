@@ -4,7 +4,7 @@ class OrgsController < ApplicationController
   # GET /orgs
   # GET /orgs.json
   def index
-    @orgs = Org.all
+    @orgs = policy_scope(Org)
   end
 
   # GET /orgs/1
@@ -12,29 +12,8 @@ class OrgsController < ApplicationController
   def show
   end
 
-  # GET /orgs/new
-  def new
-    @org = Org.new
-  end
-
   # GET /orgs/1/edit
   def edit
-  end
-
-  # POST /orgs
-  # POST /orgs.json
-  def create
-    @org = Org.new(org_params)
-
-    respond_to do |format|
-      if @org.save
-        format.html { redirect_to @org, notice: 'Org was successfully created.' }
-        format.json { render :show, status: :created, location: @org }
-      else
-        format.html { render :new }
-        format.json { render json: @org.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /orgs/1
@@ -48,16 +27,6 @@ class OrgsController < ApplicationController
         format.html { render :edit }
         format.json { render json: @org.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /orgs/1
-  # DELETE /orgs/1.json
-  def destroy
-    @org.destroy
-    respond_to do |format|
-      format.html { redirect_to orgs_url, notice: 'Org was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
