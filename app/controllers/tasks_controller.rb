@@ -1,10 +1,10 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_authorize_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.where(org_id: current_user.org_id)
+    @tasks = policy_scope(Task)
   end
 
   # GET /tasks/1
@@ -64,8 +64,9 @@ class TasksController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_task
+    def set_authorize_task
       @task = Task.find(params[:id])
+      authorize(@task)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

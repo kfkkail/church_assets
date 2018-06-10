@@ -47,7 +47,7 @@ class ApplicationPolicy
 
     def initialize(user, scope)
       @user = user
-      @scope = scope
+      @scope = scope.where(org_id: user.org_id)
     end
 
     def resolve

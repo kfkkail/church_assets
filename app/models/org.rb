@@ -1,4 +1,7 @@
 class Org < ApplicationRecord
+  has_many :articles
+  has_many :tasks
+  has_many :users
 end
 
 # == Schema Information

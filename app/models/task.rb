@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
-  has_one :org
+  belongs_to :org
   has_and_belongs_to_many :articles
 end
 
