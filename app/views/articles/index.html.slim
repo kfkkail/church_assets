@@ -16,10 +16,10 @@ table class="table"
       tr
         td = article.name
         td = article.description
-        td = article.created_at.strftime("%m/%d/%Y")
-        td = article.updated_at.strftime("%m/%d/%Y")
+        td = article.created_at.strftime("%b %d %Y %l:%M %p")
+        td = article.updated_at.strftime("%b %d %Y %l:%M %p")
         td = link_to 'Show', article
-        td = link_to('<span class="glyphicon glyphicon-pencil"></span> Edit'.html_safe, edit_article_path(article))
+        td = link_to('Edit', edit_article_path(article))
         td = link_to 'Delete', article, data: { confirm: 'Are you sure?' }, method: :delete
 
 br

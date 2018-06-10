@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180609174000) do
+ActiveRecord::Schema.define(version: 20180610005426) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "name"
@@ -18,6 +18,13 @@ ActiveRecord::Schema.define(version: 20180609174000) do
     t.integer  "org_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "articles_tasks", force: :cascade do |t|
+    t.integer "article_id"
+    t.integer "task_id"
+    t.index ["article_id"], name: "index_articles_tasks_on_article_id"
+    t.index ["task_id"], name: "index_articles_tasks_on_task_id"
   end
 
   create_table "orgs", force: :cascade do |t|
@@ -51,6 +58,7 @@ ActiveRecord::Schema.define(version: 20180609174000) do
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "org_id"
+    t.integer  "role",                   default: 1
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

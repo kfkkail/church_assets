@@ -15,7 +15,7 @@ table class="table"
       tr
         td = task.name
         td = task.description
-        td = task.start_date
+        td = task.start_date.strftime("%b %d %Y %l:%M %p")
         td = link_to 'Show', task
         td = link_to 'Edit', edit_task_path(task)
         td = link_to 'Destroy', task, data: { confirm: 'Are you sure?' }, method: :delete
