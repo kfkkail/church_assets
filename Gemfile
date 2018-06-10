@@ -14,6 +14,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # Windows doe
 gem 'slim-rails', '3.1.0'
 gem 'devise', '4.2.0'
 gem 'pundit'
+gem 'sidekiq'
 
 
 group :development, :test do
