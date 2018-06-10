@@ -7,9 +7,6 @@ table class="table"
       th Email
       th Created At
       th Updated At
-      th
-      th
-      th
 
   tbody
     - @users.each do |user|
@@ -18,8 +15,6 @@ table class="table"
         td = user.email
         td = user.created_at.strftime("%b %d %Y %l:%M %p")
         td = user.updated_at.strftime("%b %d %Y %l:%M %p")
-        td = link_to 'Edit', edit_user_path(user)
-        /td = link_to 'Destroy', user, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 
