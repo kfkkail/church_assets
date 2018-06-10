@@ -47,7 +47,11 @@ class ApplicationPolicy
 
     def initialize(user, scope)
       @user = user
-      @scope = scope.where(org_id: user.org_id)
+      if user.role == User.roles[:admin]
+        @scope = scope
+      else
+        @scope = scope.where(org_id: user.org_id)
+      end
     end
 
     def resolve
