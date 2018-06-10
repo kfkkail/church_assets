@@ -1,9 +1,9 @@
 development:
- host: ‘localhost’
- port: ‘6379’
+ host: 'localhost'
+ port: '6379'
 test:
- host: ‘localhost’
- port: ‘6379’
+ host: 'localhost'
+ port: '6379'
 production:
- host: ‘worker-001.77gdu4.0001.use2.cache.amazonaws.com’
- port: ‘6379’
+ host: 'worker-001.77gdu4.0001.use2.cache.amazonaws.com'
+ port: '6379'
