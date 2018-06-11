@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   get '/about', to: 'application#about', as: 'about'
   get '/contact', to: 'application#contact', as: 'contact'
   get '/unauthorized', to: 'application#unauthorized', as: 'unauthorized'
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 end
