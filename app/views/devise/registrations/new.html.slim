@@ -41,3 +41,6 @@
         p
           = 'Already Registered? Log In '
           = link_to('here', new_user_session_path)
+        p
+          = 'Forgot? Reset password by clicking '
+          = link_to 'here', new_password_path(resource)
