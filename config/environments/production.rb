@@ -56,6 +56,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "tazkiyah_mvp_#{Rails.env}"
   config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = { host: 'www.production.p7mpzvtu5t.us-east-2.elasticbeanstalk.com', port: 3000 }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
