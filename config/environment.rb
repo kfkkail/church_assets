@@ -6,10 +6,10 @@ Rails.application.initialize!
 
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-  :address => 'smtp.gmail.com',
+  :address => 'email-smtp.us-east-1.amazonaws.com',
   :port => 587,
-  :user_name => 'kail.keusch@gmail.com',
-  :password => ENV['GMAIL_PASSWORD'],
-  :authentication => 'login',
+  :user_name => 'AKIAJ3RWIWXJZFW25KSA',
+  :password => 'Amd0al12OtKTygEATpKYAyUKfNsqq12sZ7QWpRvNbca6',
+  :authentication => :login,
   :enable_starttls_auto => true
 }
