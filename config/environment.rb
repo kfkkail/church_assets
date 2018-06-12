@@ -6,11 +6,10 @@ Rails.application.initialize!
 
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-  :user_name => 'apikey',
-  :password => ENV['SENDGRID_API_KEY'],
-  :domain => 'kailkeusch.com',
-  :address => 'smtp.sendgrid.net',
-  :port => 465,
+  :address => 'smtp.gmail.com',
+  :port => 587,
+  :user_name => 'kail.keusch@gmail.com',
+  :password => ENV['GMAIL_PASSWORD'],
   :authentication => :plain,
   :enable_starttls_auto => true
 }
