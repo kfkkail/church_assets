@@ -1,4 +1,4 @@
-Rails.application.configure do
+widthRails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -56,7 +56,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "tazkiyah_mvp_#{Rails.env}"
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'www.production.p7mpzvtu5t.us-east-2.elasticbeanstalk.com' }
+  config.action_mailer.default_url_options = { host: 'https://app.church-maintenance.com' }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
