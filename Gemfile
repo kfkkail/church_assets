@@ -3,20 +3,20 @@
 source 'https://rubygems.org'
 
 ruby '2.3.7'
-gem 'bootstrap-sass', '3.3.7'
-gem 'coffee-rails', '4.2.1'     # Use CoffeeScript for .coffee assets and views
-gem 'devise', '4.2.0'
-gem 'jbuilder', '2.6.0'         # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jquery-rails', '4.1.1'     # Use jquery as the JavaScript library
-gem 'puma', '3.6.0'             # Use Puma as the app server
+gem 'bootstrap-sass'
+gem 'coffee-rails'              # Use CoffeeScript for .coffee assets and views
+gem 'devise'
+gem 'jbuilder'                  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jquery-rails'              # Use jquery as the JavaScript library
+gem 'puma'                      # Use Puma as the app server
 gem 'pundit'
-gem 'rails', '5.0.0'            # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'sass-rails', '5.0.6'       # Use SCSS for stylesheets
+gem 'rails'                     # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'sass-rails'                # Use SCSS for stylesheets
 gem 'sidekiq'
-gem 'slim-rails', '3.1.0'
-gem 'turbolinks', '5.0.0'       # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'slim-rails'
+gem 'turbolinks'                # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby] # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'uglifier', '3.0.0'         # Use Uglifier as compressor for JavaScript assets
+gem 'uglifier'                  # Use Uglifier as compressor for JavaScript assets
 
 
 group :development, :test do
