@@ -1,11 +1,9 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
-class OrgTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+describe Org do
 end
-
 # == Schema Information
 #
 # Table name: orgs

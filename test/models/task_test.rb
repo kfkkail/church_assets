@@ -1,9 +1,8 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
-class TaskTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+describe Task do
 end
 
 # == Schema Information

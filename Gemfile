@@ -8,34 +8,51 @@ gem 'coffee-rails'              # Use CoffeeScript for .coffee assets and views
 gem 'devise'
 gem 'jbuilder'                  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jquery-rails'              # Use jquery as the JavaScript library
+gem 'pg'
 gem 'puma'                      # Use Puma as the app server
 gem 'pundit'
-gem 'rails'                     # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'sass-rails'                # Use SCSS for stylesheets
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails'
+# Use SCSS for stylesheets
+gem 'sass-rails'
 gem 'sidekiq'
 gem 'slim-rails'
-gem 'turbolinks'                # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby] # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'uglifier'                  # Use Uglifier as compressor for JavaScript assets
-
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'turbolinks'
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier'
 
 group :development, :test do
-  gem 'byebug', platform: :mri  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger
+  # console
+  gem 'byebug', platform: :mri
+  gem 'guard'
+  gem 'simplecov'
+
+  gem 'factory_bot_rails'
+  gem 'minitest-rails'
+  gem 'minitest-reporters'
+  gem 'mocha'
 end
 
 group :development do
   gem 'annotate'
   gem 'listen', '~> 3.0.5'
   gem 'rubocop'
-  gem 'spring'                  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Spring speeds up development by keeping your application
+  # running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'sqlite3'                 # Use sqlite3 as the database for Active Record
-  gem 'web-console'             # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  # Access an IRB console on exception pages or by using <%= console %>
+  # anywhere in the code.
+  gem 'web-console'
 end
 
-# always use: "bundle install --without production" command to install gems during development
+# always use: "bundle install --without production" command to install gems
+# during development
 group :production do
-  gem 'pg'
   gem 'thin'
 end
 
