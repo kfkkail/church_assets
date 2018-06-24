@@ -1,16 +1,17 @@
+# frozen_string_literal: true
+
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
 # Uncomment and set this to only include directories you want to watch
 guard :minitest, spring: 'bin/rails test', all_on_start: false do
   # with Minitest::Spec
-  watch(%r|^test/(.*)_test\.rb$|)
-  watch(%r|^app/(.*)/(.*)\.rb$|)    { |m| "test/#{m[1]}/#{m[2]}_test.rb" }
-  watch(%r|^lib/(.*)([^/]+)\.rb|)   { |m| "test/lib/#{m[1]}#{m[2]}_test.rb" }
-  watch(%r|^test/test_helper\.rb$|) { 'test' }
-  watch(%r|^test/support/|)         { 'test' }
+  watch(%r{^test/(.*)_test\.rb$})
+  watch(%r{^app/(.*)/(.*)\.rb$})    { |m| "test/#{m[1]}/#{m[2]}_test.rb" }
+  watch(%r{^lib/(.*)([^/]+)\.rb})   { |m| "test/lib/#{m[1]}#{m[2]}_test.rb" }
+  watch(%r{^test/test_helper\.rb$}) { 'test' }
+  watch(%r{^test/support/})         { 'test' }
 end
-
 
 ## Note: if you are using the `directories` clause above and you are not
 ## watching the project directory ('.'), then you will want to move

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class OrgsController < ApplicationController
-  before_action :set_authorize_org, only: [:show, :edit, :update, :destroy]
+  before_action :set_authorize_org, only: %i[show edit update destroy]
 
   # GET /orgs
   # GET /orgs.json
@@ -9,19 +11,19 @@ class OrgsController < ApplicationController
 
   # GET /orgs/1
   # GET /orgs/1.json
-  def show
-  end
+  def show; end
 
   # GET /orgs/1/edit
-  def edit
-  end
+  def edit; end
 
   # PATCH/PUT /orgs/1
   # PATCH/PUT /orgs/1.json
   def update
     respond_to do |format|
       if @org.update(org_params)
-        format.html { redirect_to @org, notice: 'Org was successfully updated.' }
+        format.html do
+          redirect_to @org, notice: 'Org was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @org }
       else
         format.html { render :edit }
@@ -38,7 +40,8 @@ class OrgsController < ApplicationController
     authorize(@org)
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet, only allow the white list
+  # through.
   def org_params
     params.require(:org).permit(:name)
   end

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
-  before_action :set_authorize_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_authorize_article, only: %i[show edit update destroy]
 
   # GET /articles
   # GET /articles.json
@@ -9,8 +11,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   # GET /articles/1.json
-  def show
-  end
+  def show; end
 
   # GET /articles/new
   def new
@@ -18,8 +19,7 @@ class ArticlesController < ApplicationController
   end
 
   # GET /articles/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /articles
   # POST /articles.json
@@ -29,11 +29,15 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
+        format.html do
+          redirect_to @article, notice: 'Article was successfully created.'
+        end
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        format.json do
+          render json: @article.errors, status: :unprocessable_entity
+        end
       end
     end
   end
@@ -43,11 +47,15 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html do
+          redirect_to @article, notice: 'Article was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        format.json do
+          render json: @article.errors, status: :unprocessable_entity
+        end
       end
     end
   end
@@ -57,20 +65,24 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
+      format.html do
+        redirect_to articles_url, notice: 'Article was successfully destroyed.'
+      end
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_authorize_article
-      @article = Article.find(params[:id])
-      authorize(@article)
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def article_params
-      params.require(:article).permit(:name, :description, :org_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_authorize_article
+    @article = Article.find(params[:id])
+    authorize(@article)
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list
+  # through.
+  def article_params
+    params.require(:article).permit(:name, :description, :org_id)
+  end
 end

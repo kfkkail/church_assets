@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationPolicy
   attr_reader :user, :record
 
@@ -47,11 +49,11 @@ class ApplicationPolicy
 
     def initialize(user, scope)
       @user = user
-      if user.role == User.roles[:admin]
-        @scope = scope
-      else
-        @scope = scope.where(org_id: user.org_id)
-      end
+      @scope = if user.role == User.roles[:admin]
+                 scope
+               else
+                 scope.where(org_id: user.org_id)
+               end
     end
 
     def resolve
