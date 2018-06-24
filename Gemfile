@@ -33,6 +33,7 @@ end
 
 group :test do
   gem 'guard'
+  gem 'minitest-reporters'
   gem 'simplecov'
 end
 
