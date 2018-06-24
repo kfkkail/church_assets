@@ -3,7 +3,13 @@
 require 'test_helper'
 
 describe Org do
+  let(:org) { FactoryBot.create(:org) }
+
+  it 'should be valid' do
+    value(org).must_be :valid?
+  end
 end
+
 # == Schema Information
 #
 # Table name: orgs

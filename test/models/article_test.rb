@@ -3,6 +3,11 @@
 require 'test_helper'
 
 describe Article do
+  let(:article) { FactoryBot.create(:article) }
+
+  it 'should be valid' do
+    value(article).must_be :valid?
+  end
 end
 
 # == Schema Information

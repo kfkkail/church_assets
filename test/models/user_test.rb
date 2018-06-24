@@ -3,6 +3,32 @@
 require 'test_helper'
 
 describe User do
+  let(:user) { FactoryBot.create(:user) }
+  let(:user_2) { FactoryBot.create(:user) }
+
+  before do
+    DatabaseCleaner.start
+  end
+
+  after do
+    DatabaseCleaner.clean
+  end
+
+  it 'should be valid' do
+    value(user).must_be :valid?
+  end
+
+  it 'initial values' do
+    expect(user.org.name).must_equal('New Org')
+    expect(user.role).must_equal('user')
+  end
+
+  it 'email validation' do
+    user
+    expect do
+      user_2
+    end.must_raise ActiveRecord::RecordInvalid
+  end
 end
 
 # == Schema Information

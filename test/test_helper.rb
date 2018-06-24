@@ -6,6 +6,7 @@ require 'rails/test_help'
 require 'minitest/autorun'
 
 Minitest::Reporters.use!
+DatabaseCleaner.strategy = :transaction
 
 module ActiveSupport
   class TestCase

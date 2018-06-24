@@ -32,6 +32,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'database_cleaner'
   gem 'guard'
   gem 'minitest-reporters'
   gem 'simplecov'
