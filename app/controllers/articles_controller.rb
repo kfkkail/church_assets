@@ -85,7 +85,8 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(
       :name, :department, :location, :manufacturer, :model_number, :room,
-      :serial_number, :useful_life_span, :description, :org_id, :cost
+      :serial_number, :useful_life_span, :description, :org_id,
+      :replacement_cost, :purchase_price, :purchase_invoice, :purchase_vendor
     )
   end
 end

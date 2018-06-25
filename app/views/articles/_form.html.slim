@@ -30,8 +30,17 @@
         = f.label :serial_number
         = f.text_field :serial_number, class: 'form-control input-sm'
       .form-group
-        = f.label :cost
-        = f.text_field :cost, class: 'form-control input-sm'
+        = f.label :replacement_cost
+        = f.number_field :replacement_cost, class: 'form-control input-sm'
+      .form-group
+        = f.label :purchase_vendor
+        = f.text_field :purchase_vendor, class: 'form-control input-sm'
+      .form-group
+        = f.label :purchase_invoice
+        = f.text_field :purchase_invoice, class: 'form-control input-sm'
+      .form-group
+        = f.label :purchase_price
+        = f.number_field :purchase_price, class: 'form-control input-sm'
       .form-group
         = f.label :notes
         = f.text_area :description, class: 'form-control input-sm'

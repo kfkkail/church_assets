@@ -27,8 +27,17 @@ h3
     strong Serial Number: &nbsp
     = @article.serial_number
     p
-    strong Cost: &nbsp
-    = @article.cost
+    strong Replacement Cost: &nbsp $
+    = @article.replacement_cost
     p
-    strong Notes:
+    strong Purchase Vendor: &nbsp
+    = @article.purchase_vendor
+    p
+    strong Purchase Invoice: &nbsp
+    = @article.purchase_invoice
+    p
+    strong Purchase Price: &nbsp $
+    = @article.purchase_price
+    p
+    strong Notes: &nbsp
     = @article.description

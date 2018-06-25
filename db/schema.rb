@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_24_212218) do
+ActiveRecord::Schema.define(version: 2018_06_25_121836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,8 +27,11 @@ ActiveRecord::Schema.define(version: 2018_06_24_212218) do
     t.string "manufacturer"
     t.string "model_number"
     t.string "serial_number"
-    t.decimal "cost", precision: 11, scale: 4
-    t.decimal "useful_life_span", precision: 11, scale: 4
+    t.decimal "replacement_cost", precision: 11, scale: 4, default: "0.0"
+    t.decimal "useful_life_span", precision: 11, scale: 4, default: "0.0"
+    t.decimal "purchase_price", precision: 11, scale: 4, default: "0.0"
+    t.string "purchase_vendor"
+    t.string "purchase_invoice"
   end
 
   create_table "orgs", id: :serial, force: :cascade do |t|
