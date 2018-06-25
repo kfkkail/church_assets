@@ -1,27 +1,23 @@
-h1 Assets
+h3
+  = link_to 'New', new_article_path, class: 'btn btn-success btn-sm pull-right'
+  span &nbsp Assets
 
-table class="table"
+table.table.table-striped.table-sm
   thead
     tr
       th Name
-      th Description
-      th Created At
-      th Updated At
-      th
-      th
+      th Location
+      th Room
       th
 
   tbody
     - @articles.each do |article|
       tr
         td = article.name
-        td = article.description
-        td = article.created_at.strftime("%b %d %Y %l:%M %p")
-        td = article.updated_at.strftime("%b %d %Y %l:%M %p")
-        td = link_to 'Show', article
-        td = link_to('Edit', edit_article_path(article))
-        td = link_to 'Delete', article, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Article', new_article_path
+        td = article.location
+        td = article.room
+        td
+          = link_to article
+            i.fa.fa-space.fa-eye
+          = link_to article, data: { confirm: 'Are you sure?' }, method: :delete
+            i.fa.fa-trash

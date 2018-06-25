@@ -1,12 +1,34 @@
-p#notice = notice
-
-p
-  strong Name:
+h3
+  = link_to 'Back', articles_path, class: 'btn btn-default btn-sm pull-left'
+  span &nbsp
   = @article.name
-p
-  strong Description:
-  = @article.description
-
-= link_to 'Edit', edit_article_path(@article)
-'|
-= link_to 'Back', articles_path
+  = link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary btn-sm pull-right'
+.panel.panel-default
+  .panel-body
+    p
+    strong Name: &nbsp
+    = @article.name
+    p
+    strong Location: &nbsp
+    = @article.location
+    p
+    strong Room: &nbsp
+    = @article.room
+    p
+    strong Department: &nbsp
+    = @article.department
+    p
+    strong Manufacturer: &nbsp
+    = @article.manufacturer
+    p
+    strong Model Number: &nbsp
+    = @article.model_number
+    p
+    strong Serial Number: &nbsp
+    = @article.serial_number
+    p
+    strong Cost: &nbsp
+    = @article.cost
+    p
+    strong Notes:
+    = @article.description
