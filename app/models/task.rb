@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Task < ApplicationRecord
   belongs_to :org
-  has_and_belongs_to_many :articles
+  belongs_to :article
 end
 
 # == Schema Information
@@ -13,5 +15,6 @@ end
 #  start_date  :datetime
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  article_id  :integer
 #  org_id      :integer
 #

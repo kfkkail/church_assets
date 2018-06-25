@@ -20,5 +20,6 @@ end
 #  start_date  :datetime
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  article_id  :integer
 #  org_id      :integer
 #

@@ -1,15 +1,47 @@
-= form_for @article do |f|
-  - if @article.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@article.errors.count, "error")} prohibited this article from being saved:"
-      ul
-        - @article.errors.full_messages.each do |message|
-          li = message
+.panel.panel-default
+  .panel-body
+    = form_for @article do |f|
+      - if @article.errors.any?
+        #error_explanation
+          h2 = "#{pluralize(@article.errors.count, "error")} prohibited this asset from being saved:"
+          ul
+            - @article.errors.full_messages.each do |message|
+              li = message
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :description
-    = f.text_area :description
-  .actions = f.submit
+      .form-group
+        = f.label :name
+        = f.text_field :name, class: 'form-control input-sm'
+      .form-group
+        = f.label :location
+        = f.text_field :location, class: 'form-control input-sm'
+      .form-group
+        = f.label :room
+        = f.text_field :room, class: 'form-control input-sm'
+      .form-group
+        = f.label :department
+        = f.text_field :department, class: 'form-control input-sm'
+      .form-group
+        = f.label :manufacturer
+        = f.text_field :manufacturer, class: 'form-control input-sm'
+      .form-group
+        = f.label :model_number
+        = f.text_field :model_number, class: 'form-control input-sm'
+      .form-group
+        = f.label :serial_number
+        = f.text_field :serial_number, class: 'form-control input-sm'
+      .form-group
+        = f.label :replacement_cost
+        = f.number_field :replacement_cost, class: 'form-control input-sm'
+      .form-group
+        = f.label :purchase_vendor
+        = f.text_field :purchase_vendor, class: 'form-control input-sm'
+      .form-group
+        = f.label :purchase_invoice
+        = f.text_field :purchase_invoice, class: 'form-control input-sm'
+      .form-group
+        = f.label :purchase_price
+        = f.number_field :purchase_price, class: 'form-control input-sm'
+      .form-group
+        = f.label :notes
+        = f.text_area :description, class: 'form-control input-sm'
+      = f.submit 'Save', class: 'btn btn-primary btn-sm btn-block'
