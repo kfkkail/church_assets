@@ -41,3 +41,4 @@ h3
     p
     strong Notes: &nbsp
     = @article.description
+    = link_to 'Create Maintenance', new_task_path({task: {name: "test", article_id: @article.id}}), class: 'btn btn-primary btn-sm pull-right'

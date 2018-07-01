@@ -6,14 +6,6 @@ describe User do
   let(:user) { FactoryBot.create(:user) }
   let(:user_2) { FactoryBot.create(:user) }
 
-  before do
-    DatabaseCleaner.start
-  end
-
-  after do
-    DatabaseCleaner.clean
-  end
-
   it 'should be valid' do
     value(user).must_be :valid?
   end
