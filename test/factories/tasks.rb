@@ -16,6 +16,6 @@ end
 #  name           :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
-#  org_id         :integer
 #  schedule_id    :integer
+#  user_id        :integer
 #

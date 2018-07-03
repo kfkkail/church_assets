@@ -1,14 +1,14 @@
 p#notice = notice
 
 p
-  strong Name:
+  strong Name: &nbsp
   = @task.name
 p
-  strong Description:
+  strong Description: &nbsp
   = @task.description
 p
-  strong Start Date:
-  = @task.start_date.strftime("%b %d %y %l:%M %p")
+  strong Due Date: &nbsp
+  = @task.due_date&.strftime("%b %d, %y")
 
 = link_to 'Edit', edit_task_path(@task)
 '|

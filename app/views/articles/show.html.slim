@@ -15,6 +15,11 @@ h3
     strong Room: &nbsp
     = @article.room
     p
+    strong Maintenance Schedule: &nbsp
+    = link_to 'New', new_schedule_path({schedule: {article_id: @article.id}}), class: 'btn btn-success btn-sm pull-right'
+    p
+      == render partial: 'schedules/schedules', locals: { schedules: @article.schedules }
+    p
     strong Department: &nbsp
     = @article.department
     p
@@ -41,4 +46,3 @@ h3
     p
     strong Notes: &nbsp
     = @article.description
-    = link_to 'Create Maintenance', new_task_path({task: {name: "test", article_id: @article.id}}), class: 'btn btn-primary btn-sm pull-right'

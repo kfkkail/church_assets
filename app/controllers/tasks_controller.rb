@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TasksController < ApplicationController
-  before_action :set_authorize_task, only: %i[show edit update destroy]
+  before_action :set_authorize_task, only: %i[show edit update destroy complete]
 
   # GET /tasks
   # GET /tasks.json
@@ -46,7 +46,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.update(task_params)
         format.html do
-          redirect_to @task, notice: 'Task was successfully updated.'
+          redirect_to tasks_url, notice: 'Task was successfully updated.'
         end
         format.json { render :show, status: :ok, location: @task }
       else
@@ -68,6 +68,22 @@ class TasksController < ApplicationController
     end
   end
 
+  def complete
+    @task.completed_date = (Time.now if @task.completed_date.nil?)
+    respond_to do |format|
+      if @task.save
+        @task.completion
+        format.html do
+          redirect_to tasks_url
+        end
+        format.json { render :show, status: :ok, location: @task }
+      else
+        format.html { render :edit }
+        format.json { render json: @task.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -79,7 +95,6 @@ class TasksController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list
   # through.
   def task_params
-    params.require(:task).permit(:name, :description, :start_date, :org_id,
-                                 :article_id)
+    params.require(:task).permit(:name, :description, :org_id, :article_id, :due_date)
   end
 end

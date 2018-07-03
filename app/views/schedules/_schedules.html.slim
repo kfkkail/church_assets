@@ -1,0 +1,17 @@
+table.table.table-striped.table-sm
+  thead
+    tr
+      th Name
+      th Duration (days)
+      th
+
+  tbody
+    - @schedules.each do |schedule|
+      tr
+        td = schedule.name
+        td = schedule.duration
+        td
+          = link_to edit_schedule_path(schedule)
+            i.fa.fa-space.fa-pencil
+          = link_to schedule, data: { confirm: 'Are you sure?' }, method: :delete
+            i.fa.fa-trash

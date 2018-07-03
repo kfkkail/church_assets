@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
-class TaskPolicy < ApplicationPolicy
+class SchedulePolicy < ApplicationPolicy
   def destroy?
-    record_exists?
-  end
-
-  def complete?
     record_exists?
   end
 
@@ -15,7 +11,7 @@ class TaskPolicy < ApplicationPolicy
       @scope = if user.role == User.roles[:admin]
                  scope
                else
-                 scope.where(schedule_id: user.org.schedules.pluck(:id))
+                 scope.where(article_id: user.org.articles.pluck(:id))
                end
     end
   end

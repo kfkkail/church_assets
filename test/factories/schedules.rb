@@ -11,6 +11,7 @@ end
 #
 #  id         :bigint(8)        not null, primary key
 #  duration   :integer
+#  name       :string
 #  start_date :datetime
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
