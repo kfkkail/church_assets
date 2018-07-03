@@ -13,6 +13,7 @@
     = f.label :description
     = f.text_area :description
   .field
-    = f.label :start_date
-    = f.datetime_select :start_date
+    = f.label :due_date
+    = f.date_select :due_date
+    = f.hidden_field :schedule_id
   .actions = f.submit

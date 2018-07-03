@@ -14,12 +14,13 @@ end
 #
 # Table name: tasks
 #
-#  id          :integer          not null, primary key
-#  description :text
-#  name        :string
-#  start_date  :datetime
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  article_id  :integer
-#  org_id      :integer
+#  id             :integer          not null, primary key
+#  completed_date :datetime
+#  description    :text
+#  due_date       :datetime
+#  name           :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  schedule_id    :integer
+#  user_id        :integer
 #

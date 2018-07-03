@@ -2,7 +2,7 @@
 
 class Article < ApplicationRecord
   belongs_to :org
-  has_many :tasks
+  has_many :schedules
 end
 
 # == Schema Information

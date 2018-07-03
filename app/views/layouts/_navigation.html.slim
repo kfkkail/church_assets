@@ -1,10 +1,7 @@
 ul class="nav navbar-nav"
-  li= link_to('<span class="fa fa-lg fa-home"></span> Home'.html_safe, root_path)
   - if current_user
-    li= link_to('<span class="fa fa-lg fa-lock"></span> Assets'.html_safe, articles_path)
-    li= link_to('<span class="fa fa-lg fa-tasks"></span> Tasks'.html_safe, tasks_path)
-    li= link_to('<span class="fa fa-lg fa-building"></span> Org'.html_safe, org_path(current_user.org))
-    li= link_to('<span class="fa fa-lg fa-user"></span> Users'.html_safe, users_path)
+    li= link_to('<span class="fa fa-lg fa-tachometer"></span> Dashboard'.html_safe, tasks_path)
+    li= link_to('<span class="fa fa-lg fa-tasks"></span> Assets'.html_safe, articles_path)
   - else
     li= link_to('<span class="fa fa-lg fa-phone"></span> Contact'.html_safe, contact_path)
     li= link_to('<span class="fa fa-lg fa-user"></span> About'.html_safe, about_path)

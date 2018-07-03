@@ -1,25 +1,65 @@
-h1 Listing tasks
+h3
+  span &nbsp Incomplete Tasks
 
-table class="table"
+table.table.table-striped.table-sm
   thead
     tr
+      th Status
       th Name
-      th Description
-      th Start Date
-      th
-      th
+      th Asset
+      th Due Date
+      th Completed
       th
 
   tbody
-    - @tasks.each do |task|
+    - @tasks.incomplete.order('due_date ASC').each do |task|
       tr
+        td
+          - if task.completed_date.nil?
+            = link_to '<input type="checkbox">'.html_safe, complete_task_path(task), :method => :patch
+          - else
+            = link_to '<input type="checkbox" checked>'.html_safe, complete_task_path(task), :method => :patch
         td = task.name
-        td = task.description
-        td = task.start_date.strftime("%b %d %y %l:%M %p")
-        td = link_to 'Show', task
-        td = link_to 'Edit', edit_task_path(task)
-        td = link_to 'Destroy', task, data: { confirm: 'Are you sure?' }, method: :delete
+        td = task.schedule.article.name
+        td = task.due_date&.strftime("%b %d, %y")
+        td = task.completed_date&.strftime("%b %d, %y")
+        td
+          = link_to task_path(task)
+            i.fa.fa-space.fa-eye
+          = link_to edit_task_path(task)
+            i.fa.fa-space.fa-pencil
+          = link_to task, data: { confirm: 'Are you sure?' }, method: :delete
+            i.fa.fa-space.fa-trash
 
-br
+h3
+  span &nbsp Completed Tasks
 
-= link_to 'New Task', new_task_path
+table.table.table-striped.table-sm
+  thead
+    tr
+      th Status
+      th Name
+      th Asset
+      th Due Date
+      th Completed
+      th
+
+  tbody
+    - @tasks.complete.each do |task|
+      tr
+        td
+          - if task.completed_date.nil?
+            = link_to '<input type="checkbox">'.html_safe, complete_task_path(task), :method => :patch
+          - else
+            = link_to '<input type="checkbox" checked>'.html_safe, complete_task_path(task), :method => :patch
+        td = task.name
+        td = task.schedule.article.name
+        td = task.due_date&.strftime("%b %d, %y")
+        td = task.completed_date&.strftime("%b %d, %y")
+        td
+          = link_to task_path(task)
+            i.fa.fa-space.fa-eye
+          = link_to edit_task_path(task)
+            i.fa.fa-space.fa-pencil
+          = link_to task, data: { confirm: 'Are you sure?' }, method: :delete
+            i.fa.fa-space.fa-trash

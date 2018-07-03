@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Org < ApplicationRecord
   has_many :articles
-  has_many :tasks
+  has_many :schedules, through: :articles
   has_many :users
 end
 

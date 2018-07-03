@@ -1,0 +1,6 @@
+.navbar.navbar-default
+  .container-fluid
+    ul class="nav navbar-nav"
+      li= link_to('<span class="fa fa-lg fa-user"></span> Profile'.html_safe, edit_user_registration_path)
+      li= link_to('<span class="fa fa-lg fa-building"></span> Org'.html_safe, org_path(current_user.org))
+      li= link_to('<span class="fa fa-lg fa-users"></span> Users'.html_safe, users_path)

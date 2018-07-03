@@ -7,6 +7,7 @@ describe Org do
 
   it 'should be valid' do
     value(org).must_be :valid?
+    Org.count.must_equal 1
   end
 end
 

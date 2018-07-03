@@ -1,3 +1,5 @@
+== render 'layouts/settings_navigation'
+
 h1 Users
 
 table class="table"
@@ -13,8 +15,8 @@ table class="table"
       tr
         td = user.first_name + ' ' + user.last_name
         td = user.email
-        td = user.created_at.strftime("%b %d %y %l:%M %p")
-        td = user.updated_at.strftime("%b %d %y %l:%M %p")
+        td = user.created_at&.strftime("%b %d, %y %l:%M %p")
+        td = user.updated_at&.strftime("%b %d, %y %l:%M %p")
 
 br
 
