@@ -1,5 +1,7 @@
-h1 Editing org
+== render 'layouts/settings_navigation'
 
+h3
+  = link_to 'Back', org_path(@org), class: 'btn btn-default btn-sm pull-left'
+  span &nbsp
+  = @org.name
 == render 'form'
-
-= link_to 'Show', @org
