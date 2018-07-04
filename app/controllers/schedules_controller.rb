@@ -65,7 +65,7 @@ class SchedulesController < ApplicationController
   protected
 
   def schedule_params
-    params.require(:schedule).permit(:name, :duration, :article_id)
+    params.require(:schedule).permit(:name, :duration, :article_id, :user_id)
   end
 
   def set_authorize

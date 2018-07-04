@@ -14,6 +14,9 @@
       .form-group
         = f.label 'Duration (days)'
         = f.text_field :duration, class: 'form-control input-sm'
-        = f.hidden_field :article_id
-        = f.hidden_field :user_id
+      .form-group
+        = f.label 'Assigned'
+        br
+        = f.select(:user_id, current_user.org.users.collect {|u| [u.first_name + ' ' + u.last_name, u.id]}, { include_blank: true})
+      = f.hidden_field :article_id
       = f.submit 'Save', class: 'btn btn-primary btn-sm btn-block'

@@ -6,6 +6,7 @@ class Task < ApplicationRecord
 
   scope :complete, -> { where('tasks.completed_date IS NOT NULL') }
   scope :incomplete, -> { where('tasks.completed_date IS NULL') }
+  scope :past_due, -> { where('tasks.due_date < ?', Time.now) }
 
   def completion
     return if completed_date.nil?
@@ -14,7 +15,8 @@ class Task < ApplicationRecord
     Task.create(
       name: schedule.name,
       due_date: due_date,
-      schedule_id: schedule.id
+      schedule_id: schedule.id,
+      user_id: schedule.user_id
     )
   end
 end

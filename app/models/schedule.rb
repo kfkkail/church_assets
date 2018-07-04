@@ -15,7 +15,8 @@ class Schedule < ApplicationRecord
       Task.create(
         name: name,
         due_date: due_date,
-        schedule_id: id
+        schedule_id: id,
+        user_id: user_id
       )
     else
       task = tasks.incomplete.first
