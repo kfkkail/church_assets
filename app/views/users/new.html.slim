@@ -1,23 +1,23 @@
 = content_for :title do
-  = 'Registration'
+  = 'New User'
+== render 'layouts/settings_navigation'
 
-.text-center
-  h1 Register New User
-
+h3
+  span &nbsp New User
 .panel.panel-default
   .panel-body
     = form_for @user do |f|
 
       .form-group
         = f.label(:first_name)
-        = f.text_field(:first_name, autofocus: true, placeholder: 'First name', class: 'form-control')
+        = f.text_field(:first_name, autofocus: true, placeholder: 'First name', class: 'form-control input-sm')
 
       .form-group
         = f.label(:last_name)
-        = f.text_field(:last_name, placeholder: 'Last name', class: 'form-control')
+        = f.text_field(:last_name, placeholder: 'Last name', class: 'form-control input-sm')
 
       .form-group
         = f.label(:email)
-        = f.email_field(:email, placeholder: 'Hello@youremail.com', class: 'form-control')
+        = f.email_field(:email, placeholder: 'Hello@youremail.com', class: 'form-control input-sm')
 
       = f.submit('Register', class: 'btn btn-primary btn-block')

@@ -4,10 +4,10 @@ h3
 table.table.table-striped.table-sm
   thead
     tr
-      th Status
+      th
       th Name
       th Asset
-      th Due Date
+      th Due
       th Completed
       th
 
@@ -21,7 +21,12 @@ table.table.table-striped.table-sm
             = link_to '<input type="checkbox" checked>'.html_safe, complete_task_path(task), :method => :patch
         td = task.name
         td = task.schedule.article.name
-        td = task.due_date&.strftime("%b %d, %y")
+        td
+          - if task.due_date < Time.now
+            .text-danger
+              = task.due_date&.strftime("%b %d, %y")
+          - else
+            = task.due_date&.strftime("%b %d, %y")
         td = task.completed_date&.strftime("%b %d, %y")
         td
           = link_to task_path(task)
@@ -37,10 +42,10 @@ h3
 table.table.table-striped.table-sm
   thead
     tr
-      th Status
+      th
       th Name
       th Asset
-      th Due Date
+      th Due
       th Completed
       th
 

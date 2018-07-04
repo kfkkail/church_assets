@@ -1,10 +1,11 @@
 == render 'layouts/settings_navigation'
 
-p#notice = notice
-
-h1 =@org.name
-p
-  strong Name:
+h3
+  span &nbsp
   = @org.name
-
-= link_to 'Edit', edit_org_path(@org)
+  = link_to 'Edit', edit_org_path(@org), class: 'btn btn-primary btn-sm pull-right'
+.panel.panel-default
+  .panel-body
+    p
+      strong Name: &nbsp
+      = @org.name

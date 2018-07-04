@@ -1,8 +1,10 @@
 == render 'layouts/settings_navigation'
 
-h1 Users
+h3
+  = link_to 'New', new_user_path, class: 'btn btn-success btn-sm pull-right'
+  span &nbsp Users
 
-table class="table"
+table.table.table-striped.table-sm
   thead
     tr
       th Name
@@ -15,9 +17,5 @@ table class="table"
       tr
         td = user.first_name + ' ' + user.last_name
         td = user.email
-        td = user.created_at&.strftime("%b %d, %y %l:%M %p")
-        td = user.updated_at&.strftime("%b %d, %y %l:%M %p")
-
-br
-
-= link_to 'New User', new_user_path
+        td = user.created_at&.strftime("%b %d, %y")
+        td = user.updated_at&.strftime("%b %d, %y")

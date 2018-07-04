@@ -1,15 +1,19 @@
-p#notice = notice
-
-p
-  strong Name: &nbsp
+h3
+  = link_to 'Back', tasks_path, class: 'btn btn-default btn-sm pull-left'
+  span &nbsp
   = @task.name
-p
-  strong Description: &nbsp
-  = @task.description
-p
-  strong Due Date: &nbsp
-  = @task.due_date&.strftime("%b %d, %y")
-
-= link_to 'Edit', edit_task_path(@task)
-'|
-= link_to 'Back', tasks_path
+  = link_to 'Edit', edit_task_path(@task), class: 'btn btn-primary btn-sm pull-right'
+.panel.panel-default
+  .panel-body
+    p
+      strong Name: &nbsp
+      = @task.name
+    p
+      strong Description: &nbsp
+      = @task.description
+    p
+      strong Due Date: &nbsp
+      = @task.due_date&.strftime("%b %d, %y")
+    p
+      strong Completed Date: &nbsp
+      = @task.completed_date&.strftime("%b %d, %y")
