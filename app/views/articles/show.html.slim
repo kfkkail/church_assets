@@ -16,7 +16,7 @@ h3
     = @article.room
     p
     strong Maintenance Schedule: &nbsp
-    = link_to 'New', new_schedule_path({schedule: {article_id: @article.id}}), class: 'btn btn-success btn-sm pull-right'
+    = link_to 'New', new_schedule_path({schedule: {article_id: @article.id, user_id: current_user.id}}), class: 'btn btn-success btn-sm pull-right'
     p
       == render partial: 'schedules/schedules', locals: { schedules: @article.schedules }
     p
