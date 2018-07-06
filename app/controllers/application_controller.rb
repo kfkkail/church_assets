@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def after_sign_in_path_for(_resource)
-    articles_path
+    tasks_path
   end
 
   def configure_permitted_parameters
