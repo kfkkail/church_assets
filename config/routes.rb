@@ -20,6 +20,9 @@ Rails.application.routes.draw do
              }
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  authenticated :user do
+    root to: redirect('/tasks')
+  end
   root to: 'application#home'
 
   get '/home', to: 'application#home', as: 'home'
