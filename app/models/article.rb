@@ -3,6 +3,14 @@
 class Article < ApplicationRecord
   belongs_to :org
   has_many :schedules
+
+  after_save :email_me
+
+  private
+
+  def email_me
+    EmailMeMailer.contact_form.deliver_later
+  end
 end
 
 # == Schema Information

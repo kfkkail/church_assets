@@ -29,3 +29,5 @@
 !.elasticbeanstalk/*.global.yml
 sendgrid.env
 gmail.env
+
+nohup.out

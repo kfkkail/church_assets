@@ -17,6 +17,7 @@ gem 'rails'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 gem 'sidekiq'
+gem 'sinatra'
 gem 'slim-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks'
