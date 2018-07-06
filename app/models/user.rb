@@ -12,6 +12,7 @@ class User < ApplicationRecord
   }
 
   belongs_to :org
+  has_many :tasks
 
   before_validation :setup_org
 

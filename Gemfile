@@ -14,9 +14,11 @@ gem 'puma'                      # Use Puma as the app server
 gem 'pundit'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
+gem 'rufus-scheduler', '~> 3.4.2'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 gem 'sidekiq'
+gem 'sidekiq-cron'
 gem 'sinatra'
 gem 'slim-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
