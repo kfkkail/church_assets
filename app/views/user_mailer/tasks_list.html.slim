@@ -1,0 +1,20 @@
+h3 Incomplete Tasks
+
+table.table.table-striped.table-sm
+  thead
+    tr
+      th Name
+      th Asset
+      th Due
+
+  tbody
+    - @tasks.incomplete.order('due_date ASC').each do |task|
+      tr
+        td = task.name
+        td = task.schedule.article.name
+        td
+          - if task.due_date < Time.now
+            .text-danger
+              = task.due_date&.strftime("%b %d, %y")
+          - else
+            = task.due_date&.strftime("%b %d, %y")

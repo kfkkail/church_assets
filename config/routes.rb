@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get '/unauthorized', to: 'application#unauthorized', as: 'unauthorized'
 
   require 'sidekiq/web'
+  require 'sidekiq/cron/web'
   # config/routes.rb
   authenticate :user, ->(u) { u.admin? } do
     mount Sidekiq::Web => '/sidekiq'

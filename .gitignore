@@ -31,3 +31,5 @@ sendgrid.env
 gmail.env
 
 nohup.out
+
+dump.rdb
