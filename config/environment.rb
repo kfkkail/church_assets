@@ -10,8 +10,8 @@ ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
   address: 'email-smtp.us-east-1.amazonaws.com',
   port: 587,
-  user_name: 'AKIAJ3RWIWXJZFW25KSA',
-  password: 'Amd0al12OtKTygEATpKYAyUKfNsqq12sZ7QWpRvNbca6',
+  user_name: Rails.application.secrets.ses_access_key,
+  password: Rails.application.secrets.ses_access_secret,
   authentication: :login,
   enable_starttls_auto: true
 }
