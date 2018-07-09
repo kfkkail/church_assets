@@ -1,4 +1,4 @@
 task_notifier_job:
-  cron: "0 9 * * MON"
+  cron: "0 13 * * MON"
   class: 'TaskNotifierJob'
   queue: default
